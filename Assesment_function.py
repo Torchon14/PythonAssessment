@@ -27,6 +27,8 @@ def policyType(v4):
         if v4 == "Yes" or v4 == "yes":
             print("You have chosen", type, "as your policy")
             return type 
+        else:
+            continue
 def policyPremium(kind,Premium,v3):
     if kind == typePolicy[0]:              
                 Premium += 500*v3

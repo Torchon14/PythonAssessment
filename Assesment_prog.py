@@ -22,6 +22,7 @@ print()
 
    
 # à améliorer = FullName verification,
+#               for PolicyType and paymentMethod need to block if answer never yes in loop
 #               mixing Policy, 
 #               adding sentences during the profil establishment
 #               Allow user to choose in months to respect the phone Insurance policy
