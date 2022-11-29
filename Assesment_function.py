@@ -1,5 +1,5 @@
-v1=0; v2 = 0; v3 = 0; v4 = 0;Kind= 0; v5 = 0;Premium=0;v7 =0; typePolicy = ["Car Insurance","Home Insurance","Mobile Phone Insurance"]; methodPayment = ["Bank transfer","Paypal","Credit Card"]; fee = 0
-
+v1=0; v2 = 0; v3 = 0; v4 = 0;Kind= 0;v6=0; v5 = 0;Premium=0;v7 =0; typePolicy = ["Car Insurance","Home Insurance","Mobile Phone Insurance"]; methodPayment = ["Bank transfer","Paypal","Credit Card"]; fee = 0
+counter =0
 
 def Welcome(v1):
     v1 = input("Do you wish to create an Insurance Policy : Yes or No\n")
@@ -20,7 +20,7 @@ def policyDuration(v3):
     if v3.isnumeric():
         v3 = int(v3)
         return v3
-def policyType(v4):
+def policyType(v4,v6):
      for type in typePolicy:
         print("Do you wish to select",type,"?")
         v4 = input ("Yes or No ?\n")
@@ -39,7 +39,7 @@ def policyPremium(kind,Premium,v3):
     elif kind == typePolicy[2]:
                 Premium += 120*v3
                 return Premium       
-def paymentMethod(fee):
+def paymentMethod(fee,v5):
     for method in methodPayment:
         print("Do you wish to select",method,"?")
         v5 = input ("Yes or No ?\n")
@@ -54,8 +54,31 @@ def paymentMethod(fee):
                 return fee
             elif method == methodPayment[2]:
                 fee = 0.20
-                return fee 
+                return fee
         else: 
             continue
 
 
+while True:
+    if counter ==0:
+        print("a policy")
+    elif counter >0:
+        v8 = input("another policy policy: Yes or No?\n")
+        if v8 !="Yes" or v8 !="yes":
+            exit()
+    Kind = policyType(v4)
+    v3 = policyDuration(v3)
+    Premium = policyPremium(Kind,Premium,v3)
+    fee = paymentMethod(fee)
+    print()
+    print("You have completed your profile !")
+    Price = Premium*fee + Premium
+    print()
+    print(" Dear customer, you asked for a", v3,"years",Kind,"contract. The total cost using",v5,"is of £",Price)
+    print()    
+    counter += 1
+    
+
+    
+
+ 
